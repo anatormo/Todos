@@ -3,8 +3,8 @@ import InputTodo from './InputTodo';
 import ListTodo from './ListTodo';
 
 const initialTodos = [
-    {id: "1", name:"Todos 1", isComplete: false},
-    {id: "2", name:"Todos 2", isComplete: false}, 
+    {id: 1, name:"Todos 1", isComplete: false},
+    {id: 2, name:"Todos 2", isComplete: false}, 
 ];
 
 
@@ -17,8 +17,8 @@ const Todo = () => {
         setValue(event.target.value)
     }
 
-    function addList(){
-        addTodos([...todos, {id:value,  name: value, isComplete: value}])//en el lugar donde iba value hay que darle los valores de la lista
+    function addList(){//valor para que siga el id del ultimo que tiene
+        addTodos([...todos, {id: todos.length+1,  name: value, isComplete: false}])//en el lugar donde iba value hay que darle los valores de la lista
     }     //era addTodos([...todos, value])
 
     return (
